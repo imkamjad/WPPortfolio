@@ -448,6 +448,13 @@
   transform: translateY(0);
 }
 
+/* Instant load above-the-fold to prevent layout jump on refresh */
+.hero .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
 /* ── Container ───────────────────────────── */
 .container {
   max-width: 1200px;
