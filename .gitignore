@@ -24,3 +24,8 @@ build/
 *.sw?
 .env
 .env.local
+
+# Project Notes & Docs
+PROJECT_NOTES.md
+PROJECT_NOTES*.md
+projectnotes.md

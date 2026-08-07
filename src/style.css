@@ -1,33 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700;800&family=Syne:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* ── Typography & Links ──────────────────── */
+h1, h2, h3, h4, h5, h6 { margin: 0; text-decoration: none; }
 
 /* ── Design Tokens ────────────────────────── */
 :root {
-  --bg:         #0e0f11;
-  --bg-2:       #151619;
-  --bg-3:       #1b1c20;
+  --bg:         #040506;
+  --bg-2:       #0d0e10;
+  --bg-3:       #121315;
   --line:       rgba(255,255,255,0.07);
   --line-2:     rgba(255,255,255,0.14);
   --accent:     #FF007F;
   --accent-dim: rgba(255, 0, 127, 0.12);
   --ink:        #e2e2e5;
-  --ink-dim:    #999aa0;
-  --ink-faint:  #5c5d63;
+  --ink-dim:    #9a8e95;
+  --ink-faint:  #8a7580;
   --radius-lg:  18px;
   --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
   --shadow-card: 0 8px 30px rgba(0,0,0,0.35);
 }
 
 /* ── Base ─────────────────────────────────── */
-@layer base {
-  html {
+html {
     scroll-behavior: smooth;
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: var(--ink);
-    background: #0E0F11;
+    background: #040506;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -36,14 +36,27 @@
   body {
     overflow-x: hidden;
     overscroll-behavior: none;
-    background-color: #0E0F11;
+    background-color: #040506;
+    position: relative;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    transform: translateZ(0);
+    background-color: #040506;
     background-image: 
-      radial-gradient(100% 70% at 85% 15%, rgba(255, 0, 127, 0.04) 0%, transparent 60%),
-      radial-gradient(80% 60% at 15% 80%, rgba(255, 0, 127, 0.03) 0%, transparent 50%),
-      linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
-    background-attachment: fixed;
+      radial-gradient(100% 70% at 85% 28%, rgba(255, 0, 127, 0.08) 0%, transparent 65%),
+      radial-gradient(80% 60% at 15% 80%, rgba(255, 0, 127, 0.06) 0%, transparent 55%),
+      linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 56px 56px, 56px 56px;
+  }
+  main, footer, header {
+    position: relative;
+    z-index: 1;
   }
   ::selection {
     background: rgba(255, 0, 127, 0.3);
@@ -52,7 +65,6 @@
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--bg-3); border-radius: 3px; }
-}
 
 /* ── Display font ─────────────────────────── */
 .display {
@@ -68,16 +80,17 @@
 /* ── Hollow / outline text ────────────────── */
 .hollow {
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.38);
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.45);
   transition: -webkit-text-stroke 0.3s ease;
 }
 .hollow:hover {
-  -webkit-text-stroke: 1.5px rgba(255, 0, 127, 0.7);
+  -webkit-text-stroke: 2px rgba(255, 0, 127, 0.85);
 }
 
 /* ── Accent gradient text ────────────────── */
 .accent {
   background: linear-gradient(135deg, #FF007F 0%, #FF3399 50%, #FF66B2 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -167,6 +180,10 @@
   flex-direction: column;
   overflow: hidden;
   transition: transform 0.35s var(--ease-out), border-color 0.35s var(--ease-out);
+  text-decoration: none;
+}
+.pcard, .pcard * {
+  text-decoration: none !important;
 }
 .pcard:hover {
   border-color: var(--line-2);
@@ -432,7 +449,9 @@
 
 /* ── Section helpers ─────────────────────── */
 .section-cream {
-  background: var(--bg-2);
+  background: rgba(13, 14, 16, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -559,7 +578,7 @@
   margin: 0;
 }
 .nav-link {
-  font-size: 0.72rem;
+  font-size: 0.78125rem;
   color: var(--ink-dim);
   text-decoration: none;
   text-transform: uppercase;
@@ -589,7 +608,7 @@
   justify-content: center;
 }
 .brand-name {
-  font-size: 1.1rem;
+  font-size: 1.15625rem;
   color: #fff;
   letter-spacing: 0.08em;
 }
@@ -646,12 +665,10 @@
 
 /* ── Grid Paper Background (saurav.work style) ────── */
 .grid-paper {
-  background-color: var(--bg);
+  background-color: transparent;
   background-image: 
-    radial-gradient(120% 90% at 75% 25%, rgba(255, 0, 127, 0.05) 0%, transparent 60%),
-    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 100% 100%, 56px 56px, 56px 56px;
+    radial-gradient(100% 80% at 75% 38%, rgba(255, 0, 127, 0.12) 0%, rgba(255, 0, 127, 0.03) 45%, transparent 70%);
+  background-size: 100% 100%;
 }
 
 /* ── Hero ─────────────────────────────────── */
@@ -659,9 +676,10 @@
   padding: clamp(120px,14vw,200px) 0 0;
 }
 .hero h1 {
-  font-size: clamp(2.8rem,7vw,6.5rem);
-  line-height: 1.02;
-  letter-spacing: -0.01em;
+  font-size: clamp(3.1rem,8.0vw,7.375rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
   color: #fff;
 }
 .hero h1 .accent { color: var(--accent); }
@@ -705,15 +723,16 @@
   margin-top: clamp(24px,3vw,40px);
 }
 .footer-base {
-  padding: 22px 0;
+  padding: 45px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   font-size: 0.72rem;
   color: var(--ink-faint);
 }
+.footer-base p { margin: 0; }
 .footer-links {
   list-style: none;
   display: flex;
