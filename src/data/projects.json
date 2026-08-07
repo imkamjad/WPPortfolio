@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Apex Athletics E-Commerce",
+    "category": "woocommerce",
+    "categoryLabel": "WooCommerce",
+    "tagline": "High-conversion WooCommerce store with custom checkout flow & instant search.",
+    "problem": "Legacy WooCommerce site took 7.2 seconds to load and dropped 65% of mobile cart checkouts due to bloated plugin stack.",
+    "solution": "Built custom Gutenberg block-based theme, integrated custom Stripe/Razorpay AJAX checkout, optimized image delivery with WebP & Redis caching.",
+    "result": "99/100 Mobile Lighthouse performance score, 1.1s load time, and +42% conversion rate increase.",
+    "stack": ["WordPress 6.4", "WooCommerce", "ACF Pro", "Tailwind CSS", "Redis Cache"],
+    "metrics": [
+      { "label": "Load Time", "val": "1.1s" },
+      { "label": "Sales Increase", "val": "+42%" },
+      { "label": "Lighthouse", "val": "99" }
+    ],
+    "link": "https://example.com/apex",
+    "github": "#",
+    "featured": true,
+    "badge": "E-Commerce"
+  },
+  {
+    "id": 2,
+    "name": "SaaS Matrix Tech Portal",
+    "category": "custom-theme",
+    "categoryLabel": "Custom Theme",
+    "tagline": "Headless-ready ultra-fast custom theme for global B2B SaaS platform.",
+    "problem": "Client relied on heavyweight Elementor setup causing DOM bloat, SEO penalties, and slow page rendering.",
+    "solution": "Architected custom lightweight theme from scratch using Timber/Twig templates, Native ACF blocks, and Tailwind CSS.",
+    "result": "Reduced DOM node count by 78%, achieved top 3 Google search rankings for 14 primary keywords.",
+    "stack": ["WordPress", "PHP 8.2", "ACF Flexible Content", "Tailwind CSS", "Vite"],
+    "metrics": [
+      { "label": "DOM Reduction", "val": "78%" },
+      { "label": "PageSpeed", "val": "100" },
+      { "label": "Keywords Ranked", "val": "14 Top 3" }
+    ],
+    "link": "https://example.com/matrix",
+    "github": "#",
+    "featured": true,
+    "badge": "Custom Theme"
+  },
+  {
+    "id": 3,
+    "name": "FinTech Capital Portal",
+    "category": "speed-optimization",
+    "categoryLabel": "Speed & Security",
+    "tagline": "Speed optimization & enterprise security hardening for corporate finance portal.",
+    "problem": "Severe server CPU throttling during peak traffic hours, malware infection vulnerabilities, 8.4s initial load.",
+    "solution": "Cleaned core files, implemented Cloudflare Enterprise WAF, database query indexing, assets minification, and Object Cache.",
+    "result": "Zero downtime during 50k simultaneous visitor spike, 800ms average response time.",
+    "stack": ["WordPress", "Cloudflare WAF", "Nginx", "Redis", "Security Hardening"],
+    "metrics": [
+      { "label": "Response Time", "val": "800ms" },
+      { "label": "Peak Load", "val": "50k/min" },
+      { "label": "Security Score", "val": "A+" }
+    ],
+    "link": "https://example.com/fintech",
+    "github": "#",
+    "featured": true,
+    "badge": "Speed & Security"
+  },
+  {
+    "id": 4,
+    "name": "Luxe Estate Real Estate Hub",
+    "category": "custom-plugin",
+    "categoryLabel": "Plugin Development",
+    "tagline": "Custom real estate IDX property sync plugin & interactive map search.",
+    "problem": "Existing MLS plugin was crashing server due to unoptimized database queries on 20,000+ property listings.",
+    "solution": "Engineered custom WordPress plugin with custom SQL tables, REST API endpoints, and Leaflet JS map integration.",
+    "result": "Property search query time cut from 4.8s to 120ms; handles over 20,000 active listings smoothly.",
+    "stack": ["WordPress REST API", "Custom PHP Plugin", "MySQL", "Leaflet JS", "Custom Post Types"],
+    "metrics": [
+      { "label": "Query Speed", "val": "120ms" },
+      { "label": "Listings Synced", "val": "20,000+" },
+      { "label": "Uptime", "val": "99.99%" }
+    ],
+    "link": "https://example.com/luxe",
+    "github": "#",
+    "featured": false,
+    "badge": "Custom Plugin"
+  },
+  {
+    "id": 5,
+    "name": "HealthPulse Telehealth Booking",
+    "category": "woocommerce",
+    "categoryLabel": "WooCommerce",
+    "tagline": "HIPAA-compliant online doctor consultation booking & WooCommerce subscription platform.",
+    "problem": "Complex scheduling needs and recurring payment subscriptions couldn't be handled by standard plugins.",
+    "solution": "Customized WooCommerce Subscriptions, added custom calendar booking engine, Twilio SMS notifications, and Zoom API integration.",
+    "result": "Automated 92% of patient appointment bookings, generated $120k recurring monthly revenue.",
+    "stack": ["WooCommerce", "Twilio API", "Zoom REST API", "Custom Gateway", "Vue.js"],
+    "metrics": [
+      { "label": "Automated", "val": "92%" },
+      { "label": "Monthly Revenue", "val": "$120k+" },
+      { "label": "Rating", "val": "4.9/5" }
+    ],
+    "link": "https://example.com/healthpulse",
+    "github": "#",
+    "featured": false,
+    "badge": "Booking System"
+  },
+  {
+    "id": 6,
+    "name": "Urban Vibe Media Publisher",
+    "category": "speed-optimization",
+    "categoryLabel": "Speed & Optimization",
+    "tagline": "High-traffic news magazine optimized for Google Core Web Vitals & Google News inclusion.",
+    "problem": "Failed Core Web Vitals (LCP 5.4s, CLS 0.35) resulting in lost Google Discover & Google News organic traffic.",
+    "solution": "Eliminated render-blocking JS/CSS, optimized font loading strategy, implemented custom lazy-load & WebP image pipelines.",
+    "result": "Passed all Core Web Vitals with 100% green metrics; organic traffic jumped +180% in 60 days.",
+    "stack": ["WordPress", "Core Web Vitals", "AMP / WebP", "Cloudflare", "Schema Markup"],
+    "metrics": [
+      { "label": "Traffic Surge", "val": "+180%" },
+      { "label": "LCP", "val": "1.2s" },
+      { "label": "CLS", "val": "0.00" }
+    ],
+    "link": "https://example.com/urbanvibe",
+    "github": "#",
+    "featured": false,
+    "badge": "Core Web Vitals"
+  }
+]
