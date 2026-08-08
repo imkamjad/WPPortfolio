@@ -13,23 +13,26 @@ export function initNavbar() {
   // Mobile drawer toggle
   if (burger && drawer) {
     burger.addEventListener('click', () => {
-      const isOpen = !drawer.hasAttribute('hidden');
+      const isOpen = drawer.classList.contains('open');
       if (isOpen) {
-        drawer.setAttribute('hidden', '');
+        drawer.classList.remove('open');
         burger.setAttribute('aria-expanded', 'false');
         burger.classList.remove('open');
+        document.body.style.overflow = '';
       } else {
-        drawer.removeAttribute('hidden');
+        drawer.classList.add('open');
         burger.setAttribute('aria-expanded', 'true');
         burger.classList.add('open');
+        document.body.style.overflow = 'hidden';
       }
     });
 
     // Close drawer when a link is clicked
     drawer.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
-        drawer.setAttribute('hidden', '');
+        drawer.classList.remove('open');
         burger.classList.remove('open');
+        document.body.style.overflow = '';
       });
     });
   }
